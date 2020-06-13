@@ -1,0 +1,14 @@
+{
+  "name": "tfjs-hands-on",
+  "version": "1.0.0",
+  "description": "Hands on with tensor-flow js",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "author": "pabhishek.2009@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs": "^2.0.0"
+  }
+}

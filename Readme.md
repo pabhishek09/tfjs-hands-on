@@ -1,12 +1,13 @@
 # Hands on with Tensor Flow JS
 
-## Aim
-Gather all relevant resources and create use-case driven examples
+## What's it about
+- Gather all relevant resources and hands-on examples to get strated with machine learning with TfJs
+- Create use case drive examples for scenarios where integrations are possible
 
-## To be implemented
-Packaging - TBD as project grows along
-Add Typescript support
-Add template engine
+## Tech
+Project is built using Web components library `lit-element`
 
-## Hmmm
-Create function wrapper to log the function calle and the arguments
+## TBD
+Improve packaging and bundlind
+Add `typescript` as required
+Build real world use-cases

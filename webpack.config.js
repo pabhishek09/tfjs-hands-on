@@ -15,22 +15,6 @@ module.exports = {
     filename: '[name].bundle.js',
   },
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ],
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader: 'file-loader',
-        options: {
-          publicPath: 'assets/'
-        }
-      },
-    ],
   },
   plugins: [
     new CleanWebpackPlugin(),

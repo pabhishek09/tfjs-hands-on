@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack",
-    "test": "npm run test"
+    "build": "webpack"
   },
   "author": "pabhishek.2009@gmail.com",
   "license": "ISC",
   "dependencies": {
     "@tensorflow/tfjs": "^2.0.0",
+    "@vaadin/router": "^1.7.2",
     "lit-element": "^2.3.1"
   },
   "devDependencies": {

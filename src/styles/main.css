@@ -1,9 +1,0 @@
-@font-face {
-  font-family: 'Aventura';
-  src: url('../assets/fonts/Aventura.otf');
-}
-
-.container {
-  font-family: 'Aventura';
-  text-align: center;
-}

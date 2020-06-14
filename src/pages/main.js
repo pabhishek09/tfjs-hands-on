@@ -1,13 +1,44 @@
-import { LitElement, html } from 'lit-element';
+import { css, LitElement, html } from 'lit-element';
+import { Router } from '@vaadin/router';
 
 class MainElement extends LitElement {
-  render () {
-    return html`
-      <div class='container'>
-        <h3>TensorFlowJs hands-on examples</h3>
-         <img src='../assets/images/tf-logo.jpeg'/>
-      </div>
+  static get styles() {
+    return css `
+      .container {
+        text-align: center;
+      }
     `
   }
+
+  async connectedCallback() {
+    super.connectedCallback();
+    setTimeout(() => {
+      const outlet = this.shadowRoot.getElementById('outlet');
+      const router = new Router(outlet);
+      router.setRoutes([
+        { path: '/', component: 'home-element' },
+        { path: '/operations',  component: 'operations-element' },
+        { path: '/linear-regression',  component: 'lr-element' },
+      ]);
+    }, 500);
+  }
+
+  render() {
+    return html`
+    <section class='container'>
+      <nav>
+        <figure class="logo">
+          <img src="../assets/images/tf-logo.jpeg" alt="tf-logo" />
+        </figure>
+        <a href="/">Home</a>
+        <a href="/operations">Operations</a>
+        <a href="/linear-regression">Linear-regression</a>
+      </nav>
+      <main id="outlet">
+      </main>
+    </section>
+    `
+  }
+
 }
 customElements.define('main-element', MainElement);

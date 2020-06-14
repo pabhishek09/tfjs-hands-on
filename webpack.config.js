@@ -1,6 +1,7 @@
 var path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -23,21 +24,21 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jgp|gif|jpeg)$/,
-        use: [
-          'file-loader'
-        ]
-      },
-      {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          'file-loader'
-        ]
+        loader: 'file-loader',
+        options: {
+          publicPath: 'assets/'
+        }
       },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(),
+    new HtmlPlugin(),
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/assets/images', to: path.resolve(__dirname, 'dist/assets/images') }, 
+      ]
+    })
   ]
 }
